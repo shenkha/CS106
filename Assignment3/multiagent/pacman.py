@@ -52,7 +52,6 @@ import types
 import time
 import random
 import os
-from scipy.stats import sem
 
 ###################################################
 # YOUR INTERFACE TO THE PACMAN WORLD: A GameState #
@@ -739,8 +738,8 @@ if __name__ == '__main__':
 
     > python pacman.py --help
     """
-    # args = readCommand(sys.argv[1:])  # Get game components based on input
-    # runGames(**args)
+    args = readCommand(sys.argv[1:])  # Get game components based on input
+    runGames(**args)
 
 
     #################### STORE TIME ####################
@@ -751,11 +750,12 @@ if __name__ == '__main__':
         time_end = time.time()
 
         time_result = time_end - time_start
+        #print("Run time " + str(time_result))
         f.write(str(time_result) + "\n")
 
     f.close()
     ######################################################
 
-    # import cProfile
+    #import cProfile
     # cProfile.run("runGames( **args )")
     pass

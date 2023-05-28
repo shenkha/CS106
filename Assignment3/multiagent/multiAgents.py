@@ -386,7 +386,7 @@ def betterEvaluationFunction(currentGameState):
     #Feature 1: distances from ghosts if exists
     if currentGameState.getNumAgents() > 1:
         ghost_dis = min( [manhattanDistance(Pacman_Pos, ghost.getPosition()) for ghost in GhostStates])
-        if (ghost_dis <= 1):
+        if (ghost_dis <= 0.05):
             return -10000
         state_score -= 1.0/ghost_dis
 
